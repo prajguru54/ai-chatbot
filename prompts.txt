@@ -1,0 +1,11 @@
+I want to create an AI chatbot using langchain and gemini.
+The app should look beautiful and modern.
+Create all the folders and files as necessary.
+
+Techstack:
+- Html, css, javascript, react, vite
+- Python, FastAPI, langchain
+###############
+
+
+The content of the chat.py file is not correct.  It should give me the complete code for the chat feature, it should be a chat application whre a user can interact with an ai chatbot. Use langchan framework and google gemini model

@@ -3,7 +3,11 @@ import axios from 'axios';
 import './ChatInterface.css';
 
 const ChatInterface = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(() => {
+    // Load messages from local storage if available
+    const savedMessages = localStorage.getItem('chatMessages');
+    return savedMessages ? JSON.parse(savedMessages) : [];
+  });
   const [inputMessage, setInputMessage] = useState('');
   const messagesEndRef = useRef(null);
 
@@ -11,7 +15,11 @@ const ChatInterface = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(scrollToBottom, [messages]);
+  useEffect(() => {
+    scrollToBottom();
+    // Save messages to local storage whenever they change
+    localStorage.setItem('chatMessages', JSON.stringify(messages));
+  }, [messages]);
 
   const sendMessage = async (e) => {
     e.preventDefault();

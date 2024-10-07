@@ -1,4 +1,4 @@
-I want to create an AI chatbot using langchain and gemini.
+1. I want to create an AI chatbot using langchain and gemini.
 The app should look beautiful and modern.
 Create all the folders and files as necessary.
 
@@ -9,3 +9,8 @@ Techstack:
 
 
 The content of the chat.py file is not correct.  It should give me the complete code for the chat feature, it should be a chat application whre a user can interact with an ai chatbot. Use langchan framework and google gemini model
+
+
+2. I have the backend ready for the chatbot application. Create an UI that Looks similar to the image I provided, and connect to this backend application. 
+
+The application should be ready to use. I have given you the folder structure for the frontend as well. Do it accordingly. Create more files whenever required. 

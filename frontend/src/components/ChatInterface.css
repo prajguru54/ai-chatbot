@@ -1,0 +1,71 @@
+.chat-container {
+  width: 400px;
+  height: 600px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  word-wrap: break-word;
+}
+
+.user {
+  background-color: #0084ff;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.bot {
+  background-color: #e4e6eb;
+  color: black;
+  align-self: flex-start;
+}
+
+.chat-input-form {
+  display: flex;
+  padding: 20px;
+  align-items: center;  /* Add this line to vertically center the input and button */
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.send-button {
+  background-color: #0084ff; /* Keep the background color */
+  color: white;              /* Keep the text color */
+  border: none;              /* Remove border */
+  border-radius: 50%;        /* Keep the circular shape */
+  width: 50px;               /* Increase width for better click area */
+  height: 50px;              /* Increase height for better click area */
+  margin-left: 10px;         /* Keep margin */
+  cursor: pointer;           /* Keep cursor style */
+  font-size: 20px;           /* Increase font size for better visibility */
+  display: flex;             /* Keep flex display */
+  justify-content: center;   /* Center the icon */
+  align-items: center;       /* Center the icon */
+  padding: 0;                /* Remove padding */
+}
+
+/* Add this new style for the send icon */
+.send-button i {
+  font-size: 24px;           /* Increase icon size */
+}

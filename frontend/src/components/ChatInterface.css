@@ -6,11 +6,17 @@
   display: flex;
   flex-direction: column;
   background-color: white;
+  position: relative;       /* For absolute positioning of resize handles */
+  overflow: hidden;        /* Hide overflow to prevent content from spilling out */
+  resize: both;            /* Allow resizing both horizontally and vertically */
+  min-width: 200px;        /* Set a minimum width */
+  min-height: 300px;       /* Set a minimum height */
+  cursor: default;         /* Default cursor when hovering over the chatbox */
 }
 
 .chat-messages {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: auto;        /* Allow vertical scrolling */
   padding: 20px;
 }
 
@@ -38,7 +44,7 @@
 .chat-input-form {
   display: flex;
   padding: 20px;
-  align-items: center;  /* Add this line to vertically center the input and button */
+  align-items: center;      /* Vertically center the input and button */
 }
 
 .chat-input {
@@ -50,22 +56,61 @@
 }
 
 .send-button {
-  background-color: #0084ff; /* Keep the background color */
-  color: white;              /* Keep the text color */
+  background-color: #0084ff; /* Background color */
+  color: white;              /* Text color */
   border: none;              /* Remove border */
-  border-radius: 50%;        /* Keep the circular shape */
-  width: 50px;               /* Increase width for better click area */
-  height: 50px;              /* Increase height for better click area */
-  margin-left: 10px;         /* Keep margin */
-  cursor: pointer;           /* Keep cursor style */
-  font-size: 20px;           /* Increase font size for better visibility */
-  display: flex;             /* Keep flex display */
+  border-radius: 50%;        /* Circular shape */
+  width: 50px;               /* Width for better click area */
+  height: 50px;              /* Height for better click area */
+  margin-left: 10px;         /* Margin */
+  cursor: pointer;           /* Pointer cursor */
+  font-size: 20px;           /* Font size for visibility */
+  display: flex;             /* Flex display */
   justify-content: center;   /* Center the icon */
   align-items: center;       /* Center the icon */
   padding: 0;                /* Remove padding */
 }
 
-/* Add this new style for the send icon */
+/* Style for the send icon */
 .send-button i {
   font-size: 24px;           /* Increase icon size */
+}
+
+/* Resize handles */
+.resize-handle {
+  position: absolute;
+  background: transparent; /* Make the handles transparent */
+  z-index: 10;             /* Ensure handles are above other elements */
+}
+
+.resize-handle.nw {
+  cursor: nwse-resize;     /* Cursor for top-left corner */
+  top: -5px;               /* Position to extend beyond the border */
+  left: -5px;              /* Position to extend beyond the border */
+  width: 10px;             /* Width of the handle */
+  height: 10px;            /* Height of the handle */
+}
+
+.resize-handle.ne {
+  cursor: nesw-resize;     /* Cursor for top-right corner */
+  top: -5px;               /* Position to extend beyond the border */
+  right: -5px;             /* Position to extend beyond the border */
+  width: 10px;             /* Width of the handle */
+  height: 10px;            /* Height of the handle */
+}
+
+.resize-handle.sw {
+  cursor: nesw-resize;     /* Cursor for bottom-left corner */
+  bottom: -5px;            /* Position to extend beyond the border */
+  left: -5px;              /* Position to extend beyond the border */
+  width: 10px;             /* Width of the handle */
+  height: 10px;            /* Height of the handle */
+}
+
+.resize-handle.se {
+  cursor: nwse-resize;     /* Cursor for bottom-right corner */
+  bottom: -5px;            /* Position to extend beyond the border */
+  right: -5px;             /* Position to extend beyond the border */
+  width: 10px;             /* Width of the handle */
+  height: 10px;            /* Height of the handle */
 }

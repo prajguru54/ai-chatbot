@@ -6,6 +6,10 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
 
+[tool.mypy]
+# strict = true
+exclude = ["venv", ".venv", "alembic"]
+
 [tool.black]
 # Formatting configuration for Black
 line-length = 88

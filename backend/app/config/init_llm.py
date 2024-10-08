@@ -1,7 +1,7 @@
 import os
 
 from dotenv import load_dotenv
-from langchain.prompts import ChatPromptTemplate
+from langchain.prompts import ChatPromptTemplate  # type:ignore
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from .logging_config import setup_logging
@@ -9,7 +9,7 @@ from .logging_config import setup_logging
 load_dotenv()
 print(f"GOOGLE_API_KEY: {os.getenv('GOOGLE_API_KEY')}")
 # Ensure you have set the GOOGLE_API_KEY environment variable
-os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY", "")
 
 
 # Initialize logging

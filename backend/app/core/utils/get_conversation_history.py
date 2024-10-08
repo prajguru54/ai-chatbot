@@ -1,4 +1,5 @@
 import re
+
 from app.config import setup_logging
 
 # Initialize logging

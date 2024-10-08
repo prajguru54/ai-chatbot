@@ -1,15 +1,13 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from app.config import initialize_llm
-from app.core.utils import get_latest_message_cycles
-from app.config import setup_logging
+
+from app.config import initialize_llm, setup_logging
 from app.core.constants import (
-    USER_NAME_LABEL,
     CHATBOT_NAME_LABEL,
     CONVERSATIONS_TO_KEEP_IN_CONTEXT,
+    USER_NAME_LABEL,
 )
-from ..chat_history import history
-
+from app.core.utils import get_latest_message_cycles
 
 # Initialize logging
 logger = setup_logging()
@@ -25,7 +23,7 @@ class ChatRequest(BaseModel):
     message: str
 
 
-context = history
+context = ""
 
 
 @router.post("/chat")
